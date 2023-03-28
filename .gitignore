@@ -1,0 +1,16 @@
+# Build output
+dist
+
+# Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env*
+
+# Ide
+.vscode/*
+!.vscode/extensions.json

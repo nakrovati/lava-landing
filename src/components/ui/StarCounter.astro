@@ -1,0 +1,44 @@
+---
+interface Props {
+  starsCount: number;
+}
+
+const { starsCount } = Astro.props;
+
+function createStarsArray(starsCount: number) {
+  let arr: number[] = [];
+
+  for (let i = 1; i <= starsCount; i++) {
+    arr.push(i);
+  }
+
+  return arr;
+}
+
+const Stars = starsCount ? createStarsArray(starsCount) : undefined;
+---
+
+<ul class="stars-list">
+  {
+    Stars &&
+      Stars.map(() => (
+        <li class="stars-list__star">
+          <img class="stars-list__icon" src="/icons/star-solid.svg" />
+        </li>
+      ))
+  }
+</ul>
+
+<style lang="scss">
+  .stars-list {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+
+    .stars-list__star {
+      .stars-list__icon {
+        height: 12px;
+      }
+    }
+  }
+</style>

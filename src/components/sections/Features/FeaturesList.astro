@@ -1,0 +1,37 @@
+---
+import FeaturesListCard from "./FeaturesListCard.astro";
+import features from "@docs/features.json";
+---
+
+<ul class="features__row">
+  {
+    features.map((card) => (
+      <FeaturesListCard
+        featureNumber={card.featureNumber}
+        title={card.title}
+        icon={card.icon}
+        text={card.text}
+        buttonText={card.buttonText}
+        customClass={card.customClass}
+      />
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  .features__row {
+    @include breakpoints.md {
+      column-gap: 30px;
+    }
+
+    @include breakpoints.lg {
+      flex-wrap: nowrap;
+      row-gap: unset;
+      justify-content: center;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 45px;
+  }
+</style>

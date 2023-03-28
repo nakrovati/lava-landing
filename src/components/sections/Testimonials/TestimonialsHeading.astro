@@ -1,0 +1,43 @@
+<div class="heading">
+  <h2 class="title">
+    What They Think <strong>About Us</strong>
+  </h2>
+  <p class="text">
+    Suspendisse vitae laoreet mauris. Fusce a nisi dapibus, euismod purus non,
+    convallis odio. Donec vitae magna ornare, pellentesque ex vitae, aliquet
+    urna.
+  </p>
+</div>
+
+<style lang="scss">
+  .heading {
+    margin: 0 auto 70px;
+
+    .title {
+      margin-bottom: 25px;
+      text-align: center;
+
+      strong {
+        font-weight: 700;
+        color: var(--primary-darker);
+      }
+    }
+
+    .text {
+      color: var(--text-grey);
+      text-align: center;
+    }
+  }
+
+  @include breakpoints.lg {
+    .heading {
+      width: 640px;
+    }
+  }
+
+  @include breakpoints.xl {
+    .heading {
+      width: 760px;
+    }
+  }
+</style>

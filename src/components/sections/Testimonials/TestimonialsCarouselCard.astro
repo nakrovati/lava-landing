@@ -1,0 +1,73 @@
+---
+import StarCounter from "@components/ui/StarCounter.astro";
+
+export interface Props {
+  author: string;
+  text: string;
+  jobPosition: string;
+  photo: {
+    src: string;
+    alt: string;
+  };
+  starsCount: number;
+}
+
+const { author, text, jobPosition, photo, starsCount } = Astro.props;
+---
+
+<li class="review-card keen-slider__slide reveal">
+  <img class="review-card__author-photo" src={photo.src} alt={photo.alt} />
+  <div class="review-card__wrapper">
+    <StarCounter starsCount={starsCount} />
+    <h3 class="review-card__author">{author}</h3>
+    <blockquote class="review-card__quote">
+      <p class="review-card__quote-text">{text}</p>
+    </blockquote>
+    <span class="review-card__job-position">{jobPosition}</span>
+  </div>
+</li>
+
+<style lang="scss">
+  .review-card {
+    overflow: visible !important;
+    font-size: 18px;
+    color: var(--white);
+    text-align: center;
+
+    .review-card__author-photo {
+      max-width: 120px;
+      aspect-ratio: 1/1;
+      margin-bottom: -60px;
+    }
+
+    .review-card__wrapper {
+      padding: 40px 30px;
+      margin-left: 60px;
+      background: var(--gr-orange);
+      border-radius: 5px;
+
+      .review-card__author {
+        margin-top: 20px;
+      }
+
+      .review-card__quote {
+        margin: 20px 0 15px;
+
+        .review-card__quote-text {
+          font-style: italic;
+          font-weight: 200;
+
+          &::before,
+          &::after {
+            content: "\201C";
+          }
+        }
+      }
+
+      .review-card__job-position {
+        font-size: 13px;
+        font-weight: 200;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,107 @@
+@use "../tokens/breakpoints";
+
+html {
+  color: var(--text);
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  letter-spacing: 1px;
+
+  &.unset {
+    color: inherit;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  color: var(--grey);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.button {
+  padding: 14px 26px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--button-text);
+  letter-spacing: 1px;
+  background-color: var(--primary-darker);
+  border: none;
+  border-radius: 25px;
+  transition: background-color 0.25s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary);
+}
+
+section:not(:first-child) {
+  padding: 100px 0;
+}
+
+.container {
+  @include breakpoints.sm {
+    max-width: 540px;
+  }
+
+  @include breakpoints.md {
+    max-width: 720px;
+  }
+
+  @include breakpoints.lg {
+    max-width: 960px;
+  }
+
+  @include breakpoints.xl {
+    max-width: 1140px;
+  }
+
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}

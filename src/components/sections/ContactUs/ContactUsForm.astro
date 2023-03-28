@@ -1,0 +1,88 @@
+<form class="contact-form">
+  <div class="form-group name">
+    <label hidden for="form-name" class="form-group__label">Full name</label>
+    <input
+      required
+      class="form-group__input"
+      name="form-name"
+      type="text"
+      placeholder="Full Name"
+    />
+  </div>
+
+  <div class="form-group email">
+    <label hidden for="form-email" class="form-group__label">Email</label>
+    <input
+      required
+      class="form-group__input"
+      name="form-email"
+      type="email"
+      placeholder="E-Mail Address"
+    />
+  </div>
+
+  <div class="form-group message">
+    <label hidden for="form-message" class="form-group__label">Message</label>
+    <textarea
+      required
+      rows="6"
+      class="form-group__input"
+      placeholder="Your Message"
+      name="form-message"></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="form-actions__button button"
+      >SEND MESSAGE NOW</button
+    >
+  </div>
+</form>
+
+<style lang="scss">
+  .contact-form {
+    display: grid;
+    grid-template-areas: "name" "email" "message" "actions";
+    gap: 30px;
+    padding: 45px;
+    font-size: 14px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+  }
+
+  .form-group {
+    &.name {
+      grid-area: name;
+    }
+
+    &.email {
+      grid-area: email;
+    }
+
+    &.message {
+      grid-area: message;
+    }
+
+    .form-group__input {
+      width: 100%;
+      padding: 20px;
+      font-weight: 300;
+      color: var(--text-grey);
+      background-color: #fafafa4d;
+      border: 1px solid #eee;
+      border-radius: 5px;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    grid-area: actions;
+    justify-content: center;
+  }
+
+  @include breakpoints.md {
+    .contact-form {
+      grid-template-areas: "name email" "message message" "actions actions";
+    }
+  }
+</style>

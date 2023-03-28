@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  icon: {
+    src: string;
+    alt?: string;
+  };
+  customClass?: string;
+}
+
+const { title, text, icon, customClass } = Astro.props;
+---
+
+<li class:list={["promotion-item", customClass]}>
+  <img
+    loading="lazy"
+    src={icon.src}
+    alt={icon.alt ?? ""}
+    class="promotion-item__img"
+  />
+  <h3 class="promotion-item__title">{title}</h3>
+  <p set:html={text} class="promotion-item__text" />
+</li>
+
+<style lang="scss">
+  .promotion-item {
+    .promotion-item__img {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .promotion-item__title {
+      padding-top: 3px;
+      margin: 0 0 15px;
+      color: var(--text);
+    }
+
+    .promotion-item__text {
+      color: var(--text-grey);
+    }
+  }
+
+  @include breakpoints.lg {
+    .promotion-list {
+      padding-left: 15px;
+    }
+  }
+</style>

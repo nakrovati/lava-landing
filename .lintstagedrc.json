@@ -1,0 +1,6 @@
+{
+  "*.(json,yml,yaml,md)": "prettier -w",
+  "*.((c)js,ts)": "prettier -w",
+  "*.astro": ["prettier -w", "stylelint --fix"],
+  "*.scss": "stylelint --fix"
+}

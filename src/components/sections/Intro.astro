@@ -1,0 +1,141 @@
+<section id="intro" class="intro section">
+  <div class="intro__info">
+    <div class="container">
+      <img
+        src="/images/banner-bg.webp"
+        alt=""
+        height="793"
+        width="803"
+        class="intro__image"
+      />
+      <div class="intro__row reveal">
+        <div class="hero">
+          <h1 class="hero__title">
+            Simple App that we <span>CREATE</span>
+          </h1>
+          <p class="hero__text">
+            Lava <a href="#">HTML landing page</a> template design is provided by
+            <a href="https://templatemo.com/">TemplateMo</a> and rebuilt using Astro.js
+            and Keen-slider. You can modify and use it for your commercial websites
+            for free of charge. This template is last updated on 29 Oct 2019.
+          </p>
+          <a href="#features" class="hero__action button">KNOW US BETTER</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .intro {
+    .intro__info {
+      padding-top: 100%;
+
+      .intro__image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -999;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .hero {
+    .hero__title {
+      margin-top: 5%;
+      margin-bottom: 30px;
+      font-weight: 900;
+      line-height: 80px;
+      color: var(--text);
+
+      span {
+        color: var(--primary);
+      }
+    }
+
+    .hero__text {
+      margin-bottom: 40px;
+      font-size: 18px;
+      line-height: 30px;
+      color: var(--text-grey);
+      letter-spacing: 0.25px;
+    }
+
+    .hero__action {
+      background-color: var(--primary);
+
+      &:hover {
+        background-color: var(--secondary);
+      }
+    }
+  }
+
+  @media (min-width: 810px) {
+    .intro .intro__info {
+      padding-top: 793px;
+    }
+  }
+
+  @include breakpoints.lg {
+    .intro .intro__info {
+      width: 92%;
+      margin-left: 5%;
+
+      .intro__row {
+        width: 50%;
+      }
+    }
+  }
+
+  @media (min-width: 1140px) {
+    .intro {
+      height: 100vh;
+
+      .intro__info {
+        width: 46%;
+        padding-top: 0;
+
+        .intro__row {
+          display: flex;
+        }
+      }
+    }
+
+    .hero {
+      margin-top: 50%;
+    }
+  }
+
+  @media (min-width: 1320px) {
+    .intro .intro__info {
+      width: 70%;
+    }
+
+    .hero {
+      margin-top: 35%;
+    }
+  }
+
+  @media (min-width: 1420px) {
+    .intro .intro__info {
+      width: initial;
+      margin: initial;
+
+      .intro__row {
+        width: 45%;
+      }
+    }
+
+    .hero {
+      padding-right: 15px;
+    }
+  }
+
+  @include breakpoints.xxl {
+    .intro {
+      height: 80vh;
+    }
+  }
+</style>

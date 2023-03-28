@@ -1,0 +1,44 @@
+{
+  "reviews": [
+    {
+      "author": "Jonathan Smart",
+      "text": "I'm blown away by the performance of Lava Landing Template. It's incredibly lightweight and optimized for speed, which has improved my website's user experience and helped me rank higher on search engines.",
+      "jobPosition": "Besta CTO",
+      "photo": {
+        "src": "/images/reviewers/JonathanSmart.webp",
+        "alt": "Photo of Johnatan Smith"
+      },
+      "starsCount": 5
+    },
+    {
+      "author": "Martino Tino",
+      "text": "Lava Landing Template has exceeded my expectations. As someone who's not very tech-savvy, I was able to create a stunning website without any coding knowledge.",
+      "jobPosition": "Web Analyst",
+      "photo": {
+        "src": "/images/reviewers/MartinoTino.webp",
+        "alt": "Photo of Martino Tino"
+      },
+      "starsCount": 5
+    },
+    {
+      "author": "George Tasa",
+      "text": "Lava Landing Template is amazing! The clean design and fast loading speed really make my website stand out from the competition. Highly recommend it!",
+      "jobPosition": "System Admin",
+      "photo": {
+        "src": "/images/reviewers/GeorgeTasa.webp",
+        "alt": "Photo of George Tasa"
+      },
+      "starsCount": 3
+    },
+    {
+      "author": "Sir James",
+      "text": "I've been using Lava Landing Template for my business website and it's been a game changer. The easy customization and seamless integration with Keen Slider has made my life so much easier.",
+      "jobPosition": "New Villager",
+      "photo": {
+        "src": "/images/reviewers/SirJames.webp",
+        "alt": "Photo of Sir James"
+      },
+      "starsCount": 4
+    }
+  ]
+}

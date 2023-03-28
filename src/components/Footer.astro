@@ -1,0 +1,55 @@
+---
+import ContactUs from "./sections/ContactUs/ContactUs.astro";
+---
+
+<footer id="contact-us" class="footer section">
+  <img loading="lazy" src="/images/footer-bg.webp" alt="" class="footer__bg" />
+
+  <div class="container">
+    <ContactUs />
+    <div class="copyright">
+      <p class="copyright__text">
+        Copyright © 2020 Lava Landing Page | Designed by <a
+          class="unset"
+          href="https://templatemo.com/">TemplateMo</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    position: relative;
+
+    .footer__bg {
+      position: absolute;
+      z-index: -999;
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .copyright {
+    padding: 60px 0;
+    border-top: 1px solid rgb(250 250 250 / 30%);
+
+    .copyright__text {
+      font-size: 16px;
+      color: var(--white);
+      text-align: center;
+    }
+  }
+
+  @include breakpoints.lg {
+    .footer {
+      padding-top: 120px;
+      margin-top: 200px;
+
+      .footer__bg {
+        margin-top: -120px;
+      }
+    }
+  }
+</style>

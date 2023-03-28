@@ -1,0 +1,32 @@
+---
+import TestimonialsHeading from "./TestimonialsHeading.astro";
+import TestimonialsCarousel from "./TestimonialsCarousel.astro";
+---
+
+<section id="testimonials" class="section testimonials">
+  <div class="container">
+    <img
+      loading="lazy"
+      src="/images/right-bg-decor.webp"
+      alt=""
+      class="testimonials__bg-img"
+    />
+    <div class="testimonials__row">
+      <TestimonialsHeading />
+      <TestimonialsCarousel />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .testimonials {
+    position: relative;
+
+    .testimonials__bg-img {
+      position: absolute;
+      top: -10%;
+      right: 0;
+      z-index: -9999;
+    }
+  }
+</style>

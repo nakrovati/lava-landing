@@ -1,0 +1,26 @@
+[
+  {
+    "title": "What is it?",
+    "text": "Lava Template is available for download on our website, allowing you to quickly and easily implement a fast and optimized website without the hassle of writing code from scratch.",
+    "icon": {
+      "src": "/images/about-icon.webp"
+    },
+    "customClass": "reveal fade-right"
+  },
+  {
+    "title": "License",
+    "text": "Please do not redistribute this template ZIP file for a download purpose. You may <a href='https://templatemo.com/contact'>contact</a> us for additional licensing of our template or to get a PSD file.",
+    "icon": {
+      "src": "/images/about-icon.webp"
+    },
+    "customClass": "reveal fade-right"
+  },
+  {
+    "title": "Download",
+    "text": "You can <a rel=\"nofollow\" href=\"https://templatemo.com/tm-540-lava-landing-page\">download Lava Template</a> from our website.",
+    "icon": {
+      "src": "/images/about-icon.webp"
+    },
+    "customClass": "reveal fade-right"
+  }
+]

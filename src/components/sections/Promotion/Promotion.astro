@@ -1,0 +1,67 @@
+---
+import PromotionList from "./PromotionList.astro";
+---
+
+<section class="section promotion">
+  <div class="container">
+    <div class="promotion__row">
+      <div class="img-container">
+        <img
+          loading="lazy"
+          src="/images/left-bg-decor.webp"
+          alt=""
+          class="promotion__bg-img"
+        />
+        <img
+          loading="lazy"
+          src="/images/left-image.webp"
+          alt="Phone with the lava app open"
+          class="promotion__img reveal fade-left"
+        />
+      </div>
+      <PromotionList />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .promotion {
+    .promotion__row {
+      display: grid;
+
+      .img-container {
+        display: flex;
+
+        .promotion__bg-img {
+          position: absolute;
+          left: 0;
+          z-index: -999;
+          align-self: center;
+          max-width: 100%;
+        }
+
+        .promotion__img {
+          align-self: center;
+          max-width: 100%;
+          margin: 0 auto 60px;
+        }
+      }
+    }
+  }
+
+  @include breakpoints.lg {
+    .promotion {
+      .promotion__row {
+        grid-template-columns: 41.33% 50%;
+        gap: 8.66%;
+
+        .img-container {
+          .promotion__img {
+            padding-right: 15px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+</style>

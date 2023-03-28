@@ -1,0 +1,34 @@
+{
+  "name": "lava-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "dev:host": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "style": "stylelint \"src/**/*.{scss,astro}\"",
+    "style:fix": "stylelint \"src/**/*.{scss,astro}\" --fix",
+    "prepare": "husky install || exit 0"
+  },
+  "dependencies": {
+    "astro": "^2.1.7",
+    "keen-slider": "^6.8.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "postcss-html": "^1.5.0",
+    "prettier": "^2.8.7",
+    "prettier-plugin-astro": "^0.8.0",
+    "sass": "^1.60.0",
+    "stylelint": "^15.3.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard-scss": "^7.0.1"
+  }
+}

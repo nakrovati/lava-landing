@@ -1,0 +1,243 @@
+<header id="header" class="header">
+  <div class="container">
+    <div class="header__row">
+      <nav class="header__nav">
+        <a class="header__logo" href="/">LAVA</a>
+        <input
+          class="burger-toogle"
+          name="checkbox"
+          type="checkbox"
+          id="burger-toogle"
+        />
+        <label class="burger-button" for="burger-toogle"><span></span></label>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="#intro" class="menu__link">HOME</a>
+          </li>
+          <li class="menu__item">
+            <a href="#about" class="menu__link">ABOUT</a>
+          </li>
+          <li class="menu__item">
+            <a href="#testimonials" class="menu__link">TESTIMONIALS</a>
+          </li>
+          <li class="menu__item">
+            <a href="#contact-us" class="menu__link">CONTACT US</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  .header {
+    --header-shadow: 0px 0px 10px rgb(0 0 0 / 15%);
+
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 80px;
+    color: var(--text);
+    background-color: var(--header-bg);
+
+    &.sticky {
+      position: fixed;
+      background-color: var(--header-bg);
+      box-shadow: var(--header-shadow);
+    }
+
+    .header__row {
+      .header__nav {
+        display: flex;
+        flex-direction: column;
+        min-height: 80px;
+        overflow: hidden;
+
+        .header__logo {
+          margin: 0 auto;
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 80px;
+          color: var(--text);
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  .menu {
+    max-height: 0;
+    margin: 0;
+    overflow: hidden;
+    visibility: hidden;
+    background-color: var(--header-bg);
+    transition: max-height 0.3s ease-out;
+
+    .menu__item {
+      .menu__link {
+        display: block;
+        width: 100%;
+        height: 50px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 50px;
+        color: var(--text);
+        text-align: center;
+
+        &.active,
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .burger-toogle:checked ~ .menu {
+    max-height: 200px;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .burger-button {
+    position: absolute;
+    top: 50%;
+    right: 55px;
+    display: block;
+    width: 30px;
+    height: 24px;
+    transform: translateY(-50%);
+
+    span,
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      height: 2px;
+      background-color: var(--black);
+      transition: opacity 0.5s;
+    }
+
+    span {
+      top: 50%;
+      width: 100%;
+    }
+
+    &::before,
+    &::after {
+      width: 75%;
+      content: "";
+      transition: transform 0.5s, width 0.5s;
+    }
+
+    &::before {
+      top: 0;
+      transform-origin: 0% 0%;
+    }
+
+    &::after {
+      bottom: 0;
+      transform-origin: 0% 100%;
+    }
+  }
+
+  .burger-toogle {
+    position: absolute;
+    opacity: 0;
+
+    &:checked ~ .burger-button {
+      & > span {
+        opacity: 0;
+      }
+
+      &::before {
+        width: 32px;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        width: 32px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @include breakpoints.lg {
+    .header {
+      background-color: unset;
+      box-shadow: unset;
+
+      .header__row {
+        position: unset;
+
+        .header__nav {
+          position: relative;
+          flex-direction: row;
+          align-items: center;
+
+          .header__logo {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      max-height: unset;
+      margin: 0 auto;
+      overflow: unset;
+      visibility: visible;
+      background-color: var(--white);
+
+      .sticky & {
+        background-color: var(--header-bg);
+      }
+
+      .menu__item {
+        padding: 0 1rem;
+
+        .menu__link {
+          display: unset;
+          line-height: 40px;
+          color: var(--text-grey-darker);
+          transition: color 0.25s ease;
+
+          &:where(.active &) {
+            color: var(--text);
+          }
+        }
+      }
+    }
+
+    .burger-button {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import "@helpers/observers/activateMenuLink";
+
+  const menu: HTMLUListElement = document.querySelector(".menu")!;
+  const checkbox: HTMLInputElement = document.querySelector(".burger-toogle")!;
+
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      menu.style.visibility = "visible";
+    } else {
+      setTimeout(() => {
+        menu.style.removeProperty("visibility");
+      }, 300);
+    }
+  });
+
+  const header: HTMLElement = document.querySelector("#header")!;
+
+  function makeHeaderSticky() {
+    header.classList.toggle("sticky", window.scrollY > 320);
+  }
+
+  window.addEventListener("load", makeHeaderSticky, { once: true });
+  window.addEventListener("scroll", makeHeaderSticky);
+</script>

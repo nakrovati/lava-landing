@@ -1,0 +1,43 @@
+---
+import PromotionListItem from "./PromotionListItem.astro";
+import promotions from "@docs/promotions.json";
+---
+
+<ul class="promotion-list">
+  {
+    promotions.map((promotion) => (
+      <PromotionListItem
+        title={promotion.title}
+        text={promotion.text}
+        icon={promotion.icon}
+        customClass={promotion.customClass}
+      />
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  .promotion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 0;
+    overflow: hidden;
+  }
+</style>
+
+<style is:global lang="scss">
+  .promotion-item {
+    &:nth-child(1) {
+      animation-duration: 0.4s !important;
+    }
+
+    &:nth-child(2) {
+      animation-duration: 0.6s !important;
+    }
+
+    &:nth-child(3) {
+      animation-duration: 0.8s !important;
+    }
+  }
+</style>

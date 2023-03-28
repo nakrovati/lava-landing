@@ -1,0 +1,77 @@
+@mixin reduce-animations-if-reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.reveal {
+  &.shown {
+    animation: fade 1s ease-in;
+
+    @include reduce-animations-if-reduced-motion;
+
+    &.fade-bottom {
+      animation: fade-bottom 1s ease-in;
+
+      @include reduce-animations-if-reduced-motion;
+    }
+
+    &.fade-left {
+      animation: fade-left 1s ease-in;
+
+      @include reduce-animations-if-reduced-motion;
+    }
+
+    &.fade-right {
+      animation: fade-right 1s ease-in;
+
+      @include reduce-animations-if-reduced-motion;
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

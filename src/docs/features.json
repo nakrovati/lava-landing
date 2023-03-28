@@ -1,0 +1,32 @@
+[
+  {
+    "featureNumber": "01",
+    "title": "Trend Analysis",
+    "icon": {
+      "src": "/images/features-icon-1.webp"
+    },
+    "text": "Data-driven insights for strategic decision-making and identifying industry patterns.",
+    "buttonText": "READ MORE",
+    "customClass": "reveal fade-left"
+  },
+  {
+    "featureNumber": "02",
+    "title": "Site Optimization",
+    "icon": {
+      "src": "/images/features-icon-2.webp"
+    },
+    "text": "Enhancing website speed, usability, and user experience to drive engagement.",
+    "buttonText": "DISCOVER MORE",
+    "customClass": "reveal fade-bottom"
+  },
+  {
+    "featureNumber": "03",
+    "title": "Email Design",
+    "icon": {
+      "src": "/images/features-icon-3.webp"
+    },
+    "text": "Creating visually stunning and engaging email campaigns with personalized content.",
+    "buttonText": "MORE DETAILS",
+    "customClass": "reveal fade-right"
+  }
+]

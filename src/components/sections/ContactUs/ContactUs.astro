@@ -1,0 +1,34 @@
+---
+import ContactUsForm from "./ContactUsForm.astro";
+import ContactUsMoreAbout from "./ContactUsMoreAbout.astro";
+---
+
+<div class="contact-us">
+  <div class="contact-us__row">
+    <ContactUsForm /><ContactUsMoreAbout />
+  </div>
+</div>
+
+<style lang="scss">
+  .contact-us {
+    position: relative;
+    padding: 60px 0;
+    color: var(--white);
+
+    .contact-us__row {
+      display: grid;
+      gap: 45px;
+    }
+  }
+
+  @include breakpoints.lg {
+    .contact-us {
+      padding: 120px 0;
+
+      .contact-us__row {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+  }
+</style>
