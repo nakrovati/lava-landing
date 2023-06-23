@@ -10,25 +10,25 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write .",
+    "format": "prettier --write . src/**/*.astro",
     "style": "stylelint \"src/**/*.{scss,astro}\"",
     "style:fix": "stylelint \"src/**/*.{scss,astro}\" --fix",
     "prepare": "husky install || exit 0"
   },
   "dependencies": {
-    "astro": "^2.1.7",
+    "astro": "^2.7.0",
     "keen-slider": "^6.8.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
+    "lint-staged": "^13.2.2",
     "postcss-html": "^1.5.0",
-    "prettier": "^2.8.7",
-    "prettier-plugin-astro": "^0.8.0",
-    "sass": "^1.60.0",
-    "stylelint": "^15.3.0",
-    "stylelint-config-recess-order": "^4.0.0",
-    "stylelint-config-standard-scss": "^7.0.1"
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.10.0",
+    "sass": "^1.63.6",
+    "stylelint": "^15.9.0",
+    "stylelint-config-recess-order": "^4.2.0",
+    "stylelint-config-standard-scss": "^9.0.0"
   }
 }
